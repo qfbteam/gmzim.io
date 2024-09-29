@@ -55,7 +55,14 @@
             border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
+            display: flex;
+            align-items: center;
             transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .discord-button img {
+            width: 20px; /* Ajuste o tamanho da logo do Discord */
+            margin-right: 8px; /* Espaçamento entre a logo e o texto */
         }
 
         .discord-button:hover {
@@ -82,7 +89,10 @@
 
         <p>Prepare-se para aventuras épicas e muita diversão! Nos vemos no jogo! 🚀</p>
 
-        <button class="discord-button" onclick="window.open('https://qfbteam.github.io/gmzim.io/discord/', '_blank')">Entrar no Discord</button>
+        <button class="discord-button" onclick="window.open('https://qfbteam.github.io/gmzim.io/discord/', '_blank')">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Discord_logo.svg" alt="Discord Logo">
+            Discord
+        </button>
     </div>
 </body>
 </html>
