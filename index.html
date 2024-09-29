@@ -41,9 +41,27 @@
             color: #555;
             line-height: 1.5;
         }
+
+        .discord-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 10px 15px;
+            background-color: #7289da; /* Cor do Discord */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .discord-button:hover {
+            background-color: #5b6eae; /* Cor mais escura ao passar o mouse */
+        }
     </style>
 </head>
 <body>
+    <button class="discord-button" onclick="addDiscord()">Discord</button>
     <div class="container">
         <h1>🎮 Bem-vindo ao Nosso Servidor de Minecraft! 🏰</h1>
         <p>Estamos animados para receber você em nosso servidor! Para se conectar, utilize as informações correspondentes à sua versão do Minecraft:</p>
@@ -54,12 +72,19 @@
         </div>
 
         <div class="server-info">
-            <h2>🔶 Versão Bedrock 1.20.81 ate 1.21.30</h2>
+            <h2>🔶 Versão Bedrock 1.21.30</h2>
             <p><strong>IP:</strong> sd-br2.blazebr.com</p>
             <p><strong>Porta:</strong> 26219</p>
         </div>
 
         <p>Prepare-se para aventuras épicas e muita diversão! Nos vemos no jogo! 🚀</p>
     </div>
+
+    <script>
+        function addDiscord() {
+            // Adiciona ?discord à URL e recarrega a página
+            window.location.href = window.location.href.split('?')[0] + '?discord';
+        }
+    </script>
 </body>
 </html>
