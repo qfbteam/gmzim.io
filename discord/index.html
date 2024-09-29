@@ -7,72 +7,45 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #282b30; /* Fundo escuro para simular o efeito de show */
             margin: 0;
             padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Ocupa a altura total da janela */
             overflow: hidden; /* Evita rolagem */
         }
 
-        .container {
-            max-width: 800px;
-            margin: auto;
-            padding: 20px;
-            background-color: #ffffff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            text-align: center;
-            position: relative; /* Para o posicionamento do botão */
-        }
-
-        h1 {
-            color: #333;
-        }
-
-        h2 {
-            color: #0066cc;
-        }
-
-        .server-info {
-            margin: 20px 0;
-            padding: 15px;
-            background-color: #e6f7ff;
-            border-left: 5px solid #0066cc;
-        }
-
-        p {
-            color: #555;
-            line-height: 1.5;
-        }
-
         .discord-show {
-            position: absolute;
-            top: 10%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            padding: 20px;
-            background: linear-gradient(145deg, #4b4f54, #1c1f22);
+            position: relative;
+            padding: 40px;
+            background: linear-gradient(145deg, #7289da, #4f545c);
             border-radius: 20px;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
             color: white;
             text-align: center;
             width: 300px;
             z-index: 10; /* Para sobrepor a outros elementos */
+            overflow: hidden; /* Para esconder elementos fora da borda */
         }
 
         .discord-show h2 {
             margin: 0;
+            animation: glow 1.5s infinite; /* Animação de brilho */
         }
 
         .discord-button {
             margin-top: 20px;
-            padding: 10px 15px;
+            padding: 15px 20px;
             background-color: #7289da; /* Cor do Discord */
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 18px;
             transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
         }
 
         .discord-button:hover {
@@ -80,7 +53,20 @@
             transform: scale(1.05); /* Aumenta um pouco o botão */
         }
 
-        /* Efeito de luz pulsante */
+        /* Efeito de brilho */
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 5px #7289da, 0 0 10px #7289da, 0 0 15px #7289da;
+            }
+            50% {
+                text-shadow: 0 0 10px #5b6eae, 0 0 20px #5b6eae, 0 0 30px #5b6eae;
+            }
+            100% {
+                text-shadow: 0 0 5px #7289da, 0 0 10px #7289da, 0 0 15px #7289da;
+            }
+        }
+
+        /* Efeito de luz pulsante ao fundo */
         .light-effect {
             position: absolute;
             top: 0;
@@ -94,13 +80,13 @@
 
         @keyframes pulse {
             0% {
-                opacity: 0.2;
-            }
-            50% {
                 opacity: 0.5;
             }
+            50% {
+                opacity: 0.7;
+            }
             100% {
-                opacity: 0.2;
+                opacity: 0.5;
             }
         }
     </style>
@@ -108,27 +94,9 @@
 <body>
     <div class="light-effect"></div>
     
-    <div class="container">
-        <h1>🎮 Bem-vindo ao Nosso Servidor de Minecraft! 🏰</h1>
-        <p>Estamos animados para receber você em nosso servidor! Para se conectar, utilize as informações correspondentes à sua versão do Minecraft:</p>
-        
-        <div class="server-info">
-            <h2>🔷 Versão Java</h2>
-            <p><strong>IP:</strong> sd-br2.blazebr.com:26219</p>
-        </div>
-
-        <div class="server-info">
-            <h2>🔶 Versão Bedrock</h2>
-            <p><strong>IP:</strong> sd-br2.blazebr.com</p>
-            <p><strong>Porta:</strong> 26219</p>
-        </div>
-
-        <p>Prepare-se para aventuras épicas e muita diversão! Nos vemos no jogo! 🚀</p>
-
-        <div class="discord-show">
-            <h2>Junte-se ao nosso Discord!</h2>
-            <button class="discord-button" onclick="window.open('https://discord.gg/KkSCMttE46', '_blank')">Entrar no Discord</button>
-        </div>
+    <div class="discord-show">
+        <h2>🎉 Junte-se ao nosso Discord!</h2>
+        <button class="discord-button" onclick="window.open('https://discord.gg/KkSCMttE46', '_blank')">Entrar no Discord</button>
     </div>
 </body>
 </html>
