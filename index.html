@@ -10,18 +10,20 @@
             background-color: #f4f4f4;
             margin: 0;
             padding: 0;
-            overflow: hidden; /* Evita rolagem */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* Ocupa a altura total da janela */
         }
 
         .container {
             max-width: 800px;
-            margin: auto;
             padding: 20px;
             background-color: #ffffff;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
             text-align: center;
-            position: relative; /* Para o posicionamento do botão */
         }
 
         h1 {
@@ -44,25 +46,6 @@
             line-height: 1.5;
         }
 
-        .discord-show {
-            position: absolute;
-            top: 10%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            padding: 20px;
-            background: linear-gradient(145deg, #4b4f54, #1c1f22);
-            border-radius: 20px;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-            color: white;
-            text-align: center;
-            width: 300px;
-            z-index: 10; /* Para sobrepor a outros elementos */
-        }
-
-        .discord-show h2 {
-            margin: 0;
-        }
-
         .discord-button {
             margin-top: 20px;
             padding: 10px 15px;
@@ -79,56 +62,27 @@
             background-color: #5b6eae; /* Cor mais escura ao passar o mouse */
             transform: scale(1.05); /* Aumenta um pouco o botão */
         }
-
-        /* Efeito de luz pulsante */
-        .light-effect {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            animation: pulse 1.5s infinite;
-            z-index: 5; /* Abaixo do botão, mas acima da página */
-        }
-
-        @keyframes pulse {
-            0% {
-                opacity: 0.2;
-            }
-            50% {
-                opacity: 0.5;
-            }
-            100% {
-                opacity: 0.2;
-            }
-        }
     </style>
 </head>
 <body>
-    <div class="light-effect"></div>
-    
     <div class="container">
         <h1>🎮 Bem-vindo ao Nosso Servidor de Minecraft! 🏰</h1>
         <p>Estamos animados para receber você em nosso servidor! Para se conectar, utilize as informações correspondentes à sua versão do Minecraft:</p>
         
         <div class="server-info">
-            <h2>🔷 Versão Java 1.21</h2>
+            <h2>🔷 Versão Java</h2>
             <p><strong>IP:</strong> sd-br2.blazebr.com:26219</p>
         </div>
 
         <div class="server-info">
-            <h2>🔶 Versão Bedrock 1.21.30</h2>
+            <h2>🔶 Versão Bedrock</h2>
             <p><strong>IP:</strong> sd-br2.blazebr.com</p>
             <p><strong>Porta:</strong> 26219</p>
         </div>
 
         <p>Prepare-se para aventuras épicas e muita diversão! Nos vemos no jogo! 🚀</p>
 
-        <div class="discord-show">
-            <h2>🎉 Junte-se ao nosso Discord!</h2>
-            <button class="discord-button" onclick="window.open('https://qfbteam.github.io/gmzim.io/discord/', '_blank')">Entrar no Discord</button>
-        </div>
+        <button class="discord-button" onclick="window.open('https://qfbteam.github.io/gmzim.io/discord/', '_blank')">Entrar no Discord</button>
     </div>
 </body>
 </html>
